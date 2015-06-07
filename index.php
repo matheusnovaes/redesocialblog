@@ -1,6 +1,6 @@
 <?php
 
-include('classes\conexao.php');
+require('classes\conexao.php');
 
 $objConexao = new conexao();
 $stmt = $objConexao->conn->prepare('SELECT *FROM tbl_teste');
