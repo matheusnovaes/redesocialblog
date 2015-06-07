@@ -1,11 +1,8 @@
 <?php
 
-require('classes\conexao.php');
+require('helpers\libs\Smarty.class.php');
+$smarty = new Smarty();
 
-$objConexao = new conexao();
-$stmt = $objConexao->conn->prepare('SELECT *FROM tbl_teste');
-$stmt->execute();
-
-$retorno = $stmt->fetch();
-
-print_r($retorno);
+$url  = $_SERVER['REQUEST_URI'];
+$url = explode('/', $url);
+echo $url[1];
